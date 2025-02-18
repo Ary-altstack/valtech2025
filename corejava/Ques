@@ -1,0 +1,28 @@
+Sure! Here's a small assignment that covers Comparator, Comparable, hash methods, Stream API, and Lambda expressions in Java.
+
+Assignment
+Create a program that manages a collection of Student objects with the following attributes:
+
+name (String)
+age (int)
+gpa (double)
+Create a Student class with the attributes above.
+
+Implement the Comparable interface to allow sorting students by name in alphabetical order.
+Override the toString method to print the student’s details.
+Create a StudentComparator class that implements the Comparator interface.
+
+Implement two different comparators:
+One to sort students by age in ascending order.
+One to sort students by gpa in descending order.
+Use a HashSet to store students.
+
+Override the hashCode and equals methods to ensure students with the same name and gpa are considered equal.
+Create a list of students and populate it with at least 5 students.
+
+Sort the list using the default natural order (using Comparable), then by age, and then by GPA using the respective comparators.
+Use Java Streams:
+
+Filter students who are older than 20.
+Sort them by GPA (using a Lambda expression inside sorted()).
+Print the students using the forEach method with a Lambda expression.
