@@ -50,14 +50,14 @@ CurrentDept = ${current}
 	
 		 <c:forEach items="${emp}" var="e">
 		 <tr>
-		<td> ${e.id} </td>
-		<td> ${e.name}</td>
-		<td> ${e.age}</td>
-		<td> ${e.gender}</td>
-		<td>${e.salary}</td>
+		<td>${e.id} </td>
+		<td>${e.name}</td>
+		<td>${e.age}</td>
+		<td>${e.gender}</td>
+		<td>{e.salary}</td>
 		<td>${e.exp}</td>
 		<td>${e.level}</td>
-		<td>${e.dept_id}</td>
+		<td>${e.deptId}</td>
 		</tr>
 		 
 		</c:forEach>

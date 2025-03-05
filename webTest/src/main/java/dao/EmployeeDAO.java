@@ -26,8 +26,8 @@ public interface EmployeeDAO {
 	List<Employee> sortedEmployeesByExperience();	
 	List<Employee> sortedEmployeesByLevel();
 	
-	List<Employee> sortedEmployeesByDept_id();
-	List<Employee> sortedEmployeesByDept_idDesc();
+//	List<Employee> sortedEmployeesByDept_id();
+//	List<Employee> sortedEmployeesByDept_idDesc();
 	
 	List<Employee> sortedEmployeesByNameDesc();
 	List<Employee> sortedEmployeesByAgeDesc();

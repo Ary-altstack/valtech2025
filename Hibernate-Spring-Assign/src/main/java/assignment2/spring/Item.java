@@ -20,8 +20,8 @@ public class Item {
 	private String name;
 	private String description;
 	private int quantity;
-	private int reorder_quantity;
-	private int max_quantity;
+	private int reorderQuantity;
+	private int maxQuantity;
 	
 	
 	@OneToMany(targetEntity = LineOrder.class, mappedBy="item_id",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
@@ -35,14 +35,14 @@ public class Item {
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;
-		this.reorder_quantity = reorder_quantity;
-		this.max_quantity = max_quantity;
+		this.reorderQuantity = reorder_quantity;
+		this.maxQuantity = max_quantity;
 	}
 	
 	@Override
 	public String toString() {
 		return "Item [name=" + name + ", description=" + description + ", quantity=" + quantity
-				+ ", reorder_quantity=" + reorder_quantity + ", max_quantity=" + max_quantity + "]";
+				+ ", reorderQuantity=" + reorderQuantity + ", maxQuantity=" + maxQuantity + "]";
 	}
 
 	public int getId() {
@@ -83,23 +83,23 @@ public class Item {
 	}
 
 
-	public int getReorder_quantity() {
-		return reorder_quantity;
+	public int getReorderQuantity() {
+		return reorderQuantity;
 	}
 
 
-	public void setReorder_quantity(int reorder_quantity) {
-		this.reorder_quantity = reorder_quantity;
+	public void setReorderQuantity(int reorder_quantity) {
+		this.reorderQuantity = reorder_quantity;
 	}
 
 
-	public int getMax_quantity() {
-		return max_quantity;
+	public int getMaxQuantity() {
+		return maxQuantity;
 	}
 
 
-	public void setMax_quantity(int max_quantity) {
-		this.max_quantity = max_quantity;
+	public void setMaxQuantity(int max_quantity) {
+		this.maxQuantity = max_quantity;
 	}
 	
 	public List<LineOrder> getLineOrders() {

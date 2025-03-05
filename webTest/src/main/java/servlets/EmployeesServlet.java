@@ -86,11 +86,11 @@ public class EmployeesServlet extends HttpServlet {
 			}  
 			
 			String searchName = (String) req.getParameter("searchOption");  
-			System.out.println(searchName + "------------");
+			System.out.println(searchName + "......");
 			if("name".equals(searchName)) {
-				System.out.println("---------------Jaay che bhai---------------------");
+				System.out.println("....");
 				req.setAttribute("emps",dao.searchEmployeesByName(req.getParameter("search_value")));
-				System.out.println("search value------------"+ req.getParameter("search_value"));
+				System.out.println("search value-........"+ req.getParameter("search_value"));
 				System.out.println(dao.searchEmployeesByName(req.getParameter("search_value").toLowerCase()));
 				req.getRequestDispatcher("employees.jsp").forward(req, resp);
 				return;
@@ -111,10 +111,20 @@ public class EmployeesServlet extends HttpServlet {
 				req.getRequestDispatcher("employees.jsp").forward(req, resp);
 			}
 			
+			
+			
+			
+//			else if ("experience".equals(searchName)) {
+//				req.setAttribute("emps",dao.searchEmployeesByExperience(Integer.parseInt(req.getParameter("search_value"))));
+//				req.getRequestDispatcher("employees.jsp").forward(req, resp);
+//			}
 			else if ("experience".equals(searchName)) {
-				req.setAttribute("emps",dao.searchEmployeesByExperience(Integer.parseInt(req.getParameter("search_value"))));
+				req.setAttribute("emps", dao.searchEmployeesByExperience(Integer.parseInt(req.getParameter("search_value"))));
 				req.getRequestDispatcher("employees.jsp").forward(req, resp);
 			}
+			
+			
+			
 		
 			
 //			else if ("Salary".equals(searchName)) {
@@ -124,7 +134,7 @@ public class EmployeesServlet extends HttpServlet {
 //				return;
 //			}
 			
-		
+
 	
 			
 			else {
@@ -215,13 +225,13 @@ public class EmployeesServlet extends HttpServlet {
 					else if("byLevel".equals(sortBy)) {
 						
 						if("descending".equals(sortOrder)) {
-							System.out.println("descccccccccccccccccccccc");
+							System.out.println("workinggg");
 							req.setAttribute("emps", dao.sortedEmployeesByLevelDesc());
 //							return;
 						}
 						else if("ascending".equals(sortOrder)) {
 							req.setAttribute("emps", dao.sortedEmployeesByLevel());
-							System.out.println("ascccccccccccccccccccccc");
+							System.out.println("workinggg");
 						}
 					}			
 				
@@ -230,13 +240,13 @@ public class EmployeesServlet extends HttpServlet {
 					else if("byExp".equals(sortBy)) {
 						
 						if("descending".equals(sortOrder)) {
-							System.out.println("descccccccccccccccccccccc");
+							System.out.println("workingggggg");
 							req.setAttribute("emps", dao.sortedEmployeesByExperienceDesc());
 //							return;
 						}
 						else if("ascending".equals(sortOrder)) {
 							req.setAttribute("emps", dao.sortedEmployeesByExperience());
-							System.out.println("ascccccccccccccccccccccc");
+							System.out.println("workingggg");
 				
 						}
 					}		

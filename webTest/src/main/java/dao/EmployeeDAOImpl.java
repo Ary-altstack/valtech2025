@@ -273,17 +273,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	
 	}
 
-	@Override
-	public List<Employee> sortedEmployeesByDept_id() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Employee> sortedEmployeesByDept_idDesc() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<Employee> sortedEmployeesByDept_id() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<Employee> sortedEmployeesByDept_idDesc() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public List<Employee> searchEmployeesByName(String name){
@@ -317,9 +317,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	////////////////// By exp //////////
 	
 	public List<Employee> searchEmployeesByExperience(int exp){
-		return getAll().stream()
-				.filter(employee->employee.getExp()== exp)
-				.collect(Collectors.toList());
+		return getAll().stream().filter(employee->employee.getExp() == exp).collect(Collectors.toList());
 	}
 
 	

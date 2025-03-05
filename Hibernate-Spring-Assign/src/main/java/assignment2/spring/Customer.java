@@ -24,7 +24,7 @@ public class Customer {
 	private String name;
 	private int age;
 	private String address;
-	private String permanent_address;
+	private String permanentAddress;
 	private AppStatus AppStatus;
 	
 	
@@ -46,7 +46,7 @@ public class Customer {
 		this.name = name;
 		this.age = age;
 		this.address = address;
-		this.permanent_address = permanent_address;		
+		this.permanentAddress = permanentAddress;		
 		this.AppStatus = AppStatus.ENABLE;
 	}
 	
@@ -68,7 +68,7 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", age=" + age + ", address=" + address
-				+ ", permanent_address=" + permanent_address + "]";
+				+ ", permanent_address=" + permanentAddress + "]";
 	}
 
 
@@ -99,11 +99,11 @@ public class Customer {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getPermanent_address() {
-		return permanent_address;
+	public String getPermanentAddress() {
+		return permanentAddress;
 	}
-	public void setPermanent_address(String permanent_address) {
-		this.permanent_address = permanent_address;
+	public void setPermanentAddress(String permanent_address) {
+		this.permanentAddress = permanent_address;
 	}
 
 	

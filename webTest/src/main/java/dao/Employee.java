@@ -13,7 +13,7 @@ public class Employee implements Comparable<Employee>{
 	private float salary;
 	private int level;
 	private int exp;
-	private int dept_id; // deptId {make it like these}
+	private int deptId; // deptId {make it like these}
 	
 	public enum Gender {
 		MALE,FEMALE,OTHERS
@@ -30,7 +30,7 @@ public class Employee implements Comparable<Employee>{
 		this.level=level;
 		this.exp = exp;
 		this.gender=gender;
-		this.dept_id = dept_id;
+		this.deptId = dept_id;
 	
 	}
 	
@@ -110,12 +110,12 @@ public class Employee implements Comparable<Employee>{
 	}
 
 
-	public int getDept_id() {
-		return dept_id;
+	public int getDeptId() {
+		return deptId;
 	}
 
-	public void setDept_id(int dept_id) {
-		this.dept_id = dept_id;
+	public void setDeptId(int dept_id) {
+		this.deptId = dept_id;
 	}
 	
 	
@@ -160,7 +160,7 @@ public class Employee implements Comparable<Employee>{
 				.append(" exp "+exp)
 				.append("")
 				.append(" gender "+gender)
-				.append("dept_id " +dept_id)
+				.append("dept_id " +deptId)
 				.append("").toString();
 		
 	}	
@@ -207,7 +207,7 @@ public class Employee implements Comparable<Employee>{
 				return this;
 			}
 			public EmployeeBuilder dept_id(int dept_id) {
-				employee.setDept_id(dept_id);
+				employee.setDeptId(dept_id);
 				return this;
 			}
 			

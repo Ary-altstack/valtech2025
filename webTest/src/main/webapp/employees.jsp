@@ -22,7 +22,7 @@ Search By:
         <option value="salary">Salary (>=)</option>
         <option value="level">Level</option>
         <option value="age">Age</option>
-        <option value="exp">Experience</option>
+        <option value="experience">Experience</option>
     </select>
     
     <input type = "text" name = "search_value" value=""/>

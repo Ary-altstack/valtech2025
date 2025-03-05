@@ -19,8 +19,8 @@ public class InventoryServiceImpl implements InventoryService {
  
 	@Override
 	public void resetInventory(Item item) {
-		item.setQuantity(item.getMax_quantity());
-		item.setReorder_quantity(0);
+		item.setQuantity(item.getMaxQuantity());
+		item.setReorderQuantity(0);
 		itemService.update(item);
 	}
  
@@ -30,7 +30,7 @@ public class InventoryServiceImpl implements InventoryService {
 		for (LineOrder lineOrder : o.getLineOrders()) {
 			item = itemService.get(lineOrder.getItem_id().getId());
 			item.setQuantity(item.getQuantity()-lineOrder.getQuantity());
-			item.setReorder_quantity(item.getReorder_quantity() + lineOrder.getQuantity());
+			item.setReorderQuantity(item.getReorderQuantity() + lineOrder.getQuantity());
 			itemService.update(item);
 			if(item.getQuantity() == 0) {
 				resetInventory(item);

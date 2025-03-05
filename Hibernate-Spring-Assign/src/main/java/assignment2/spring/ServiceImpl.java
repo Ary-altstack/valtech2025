@@ -61,7 +61,6 @@ public class ServiceImpl implements assignment2.spring.Service {
  
 	
 	@Override
-//	@Transactional(propagation = Propagation.REQUIRED)
 	public void saveOrder(Order o) {
  
 		boolean valid = true;
@@ -69,8 +68,6 @@ public class ServiceImpl implements assignment2.spring.Service {
 		for (LineOrder lineService : o.getLineOrders()) {
 			if(lineService.getQuantity() > lineService.getItem_id().getQuantity()|| o.getCustomer().getAppStatus() == AppStatus.DISABLE) {
 				valid = false;
-				System.out.println("hiiiiiiiiiiii");
-//				o.setStatus(Status.PENDING);
 				o.setStatus(Status.PENDING);
 				
 				orderService.save(o);
@@ -87,7 +84,6 @@ public class ServiceImpl implements assignment2.spring.Service {
 	@Override
 	public void saveLineOrder(LineOrder lo) {
 		if(lo.getQuantity() > lo.getItem_id().getQuantity()) {
-			System.out.println("Qty done");
 		}
 		else{
 			lineService.save(lo);

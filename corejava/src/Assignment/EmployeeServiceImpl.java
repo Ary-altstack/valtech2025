@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public double sumOfSalaryByGender(List<Employee> employees,Gender gender) {
-		return employees.stream().filter(employee->employee.getGender()== Gender.MALE).mapToDouble(Employee::getSalary).sum();		
+		return employees.stream().filter(employee->employee.getGender()== gender).mapToDouble(Employee::getSalary).sum();		
 	}
 
 //	@Override
@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public double employeeNameContains(List<Employee>employees,String name) {
-		return employees.stream().filter(employee->employee.getName().contains("uck")).mapToDouble(Employee::getSalary).sum();
+		return employees.stream().filter(employee->employee.getName().contains(name)).mapToDouble(Employee::getSalary).sum();
 
 	}
 
