@@ -160,11 +160,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public List<Employee> sortedEmployeesById(){
 //		EmployeeDAO empl = new EmployeeDAOImpl();
+// 		.sorted(Comparator.comparingLong(Employee.getId)).collect(Collectors.toList)
 		return getAll().stream()
         .sorted(Comparator.comparingLong(Employee::getId))  
         .collect(Collectors.toList());
 	}
 	
+	
+	// Employyees by id (Desc)
 	public List<Employee> sortedEmployeesByIdDesc(){
 //		EmployeeDAO empl = new EmployeeDAOImpl();
 		return getAll().stream()
@@ -177,6 +180,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				.sorted(Comparator.comparing(Employee::getName))
 				.collect(Collectors.toList());
 	}
+	
+	// Employees by name(desc)
 	
 	public List<Employee> sortedEmployeesByNameDesc(){
 		return getAll().stream()
@@ -192,6 +197,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				.collect(Collectors.toList());
 	}
 	
+	// Employees by age(desc)
 
 	public List<Employee> sortedEmployeesByAgeDesc(){
 		return getAll().stream()
@@ -208,6 +214,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		
 	}
 	
+	// Employees by Gender(desc)
+	
 	public List<Employee> sortedEmployeesByGenderDesc(){
 		return getAll().stream()
 				.sorted(Comparator.comparing(Employee::getGender).reversed())
@@ -223,6 +231,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	
 	}
 	
+	
+	// Employees by Salary(desc)
 
 	public List<Employee> sortedEmployeesBySalaryDesc(){	
 		return getAll().stream()
@@ -238,6 +248,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	}
 	
+	
+	// Employees by exppe(desc)
 
 	public List<Employee> sortedEmployeesByExperienceDesc(){
 		return getAll().stream()
@@ -287,15 +299,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 	////////////// By Age ///////
 	public List<Employee> searchEmployeesByAge(int age){
-		return getAll().stream()
-				.filter(employee->employee.getAge()==age)
-				.collect(Collectors.toList());
+		return getAll().stream().filter(employee->employee.getAge()==age).collect(Collectors.toList());
 	}
 	///////////////By Salary/////////
 	public List<Employee> searchEmployeesBySalary(Double sal){
-		return getAll().stream()
-				.filter(employee->employee.getSalary()==sal)
-				.collect(Collectors.toList());
+		return getAll().stream().filter(employee->employee.getSalary()==sal).collect(Collectors.toList());
 	}
 	
 	////////////////By Level /////////////
@@ -314,20 +322,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				.collect(Collectors.toList());
 	}
 
-
-	
-	
-	
-	
-	
-
-		
-		
-	
-//		List<Employee> myNewEmp1 = employees.stream().filter(employee -> employee.getLevel() == 10).collect(Collectors.toList());
-//		System.out.println(myNewEmp1);
-//		double totalSalary = myNewEmp1.stream().mapToDouble(Employee :: getSalary).sum();
-//		System.out.println(totalSalary);
 	
 	
 

@@ -13,7 +13,7 @@ public class Employee implements Comparable<Employee>{
 	private float salary;
 	private int level;
 	private int exp;
-	private int dept_id;
+	private int dept_id; // deptId {make it like these}
 	
 	public enum Gender {
 		MALE,FEMALE,OTHERS

@@ -10,7 +10,11 @@
 
 	<p:bean class="assignment2.spring.CustomerServiceImpl"></p:bean>
 	<p:bean class="assignment2.spring.ItemServiceImpl"></p:bean>
-
+	<p:bean class="assignment2.spring.OrderServiceImpl"></p:bean>
+	<p:bean class="assignment2.spring.LineServiceImpl"></p:bean>
+	<p:bean class="assignment2.spring.ServiceImpl"></p:bean>
+ 	<p:bean class="assignment2.spring.InventoryServiceImpl"></p:bean>
+ 	
 	
 
 	<p:bean
@@ -22,6 +26,11 @@
 			<p:list>
 				<p:value>assignment2.spring.Customer</p:value>
 				<p:value>assignment2.spring.Item</p:value>
+				<p:value>assignment2.spring.Order</p:value>
+				<p:value>assignment2.spring.LineOrder</p:value>
+				
+<!-- 				<p:value>assignment2.spring.LineService</p:value>
+ -->				
 			</p:list>
 		</p:property>
 		<p:property name="hibernateProperties">

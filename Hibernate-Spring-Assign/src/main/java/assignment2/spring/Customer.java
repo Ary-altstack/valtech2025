@@ -1,9 +1,12 @@
 package assignment2.spring;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,34 +25,44 @@ public class Customer {
 	private int age;
 	private String address;
 	private String permanent_address;
+	private AppStatus AppStatus;
+	
+	
+	public enum AppStatus{
+		ENABLE,DISABLE;
+		
+	}
+	
+	@OneToMany(targetEntity = Order.class, mappedBy = "customer",cascade=CascadeType.ALL,fetch = FetchType.LAZY)	
+	private Set<Order> orders  ;
+	
 	
 	public Customer () {}
 	
-//	
-//	public Customer(String name, int age, String address, String permanent_address) {
-////		this.id = id;
-//		this.name = name;
-//		this.age = age;
-//		this.address = address;
-//		this.permanent_address = permanent_address;
-//		
-//	}
+
+	
+	public Customer(String name, int age, String address, String permanent_address) {
+//		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.permanent_address = permanent_address;		
+		this.AppStatus = AppStatus.ENABLE;
+	}
 	
 
-	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-	private List<Customer> customers;
+//	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+//	private List<Customer> customers;
 	
-	
-	
-	public Customer(int id, String name, int age, String address, String permanent_address, List<Customer> customers) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.age = age;
-	this.address = address;
-	this.permanent_address = permanent_address;
-	this.customers = customers;
-}
+//	
+//	public Customer(int id, String name, int age, String address, String permanent_address, List<Customer> customers) {
+//	this.id = id;
+//	this.name = name;
+//	this.age = age;
+//	this.address = address;
+//	this.permanent_address = permanent_address;
+//	this.customers = customers;
+//}
 
 
 	@Override
@@ -65,6 +78,9 @@ public class Customer {
 //	public void setId(int id) {
 //		this.id = id;
 //	}
+	
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -90,14 +106,22 @@ public class Customer {
 		this.permanent_address = permanent_address;
 	}
 
-
-	public List<Customer> getCustomers() {
-		return customers;
+	
+	public Set<Order> getOrders() {
+		return orders;
 	}
-
-
-	public void setCustomers(List<Customer> customers) {
-		this.customers = customers;
+	
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
+	}
+	
+	
+	public AppStatus getAppStatus() {
+		return AppStatus;
+	}
+	
+	public void setAppStatus(AppStatus appStatus) {
+		AppStatus = appStatus;
 	}
 	
 	

@@ -1,5 +1,6 @@
 package Assignment;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -12,6 +13,7 @@ public class Employee implements Comparable<Employee>{
 	private int age;
 	private float salary;
 	private int level;
+	private List<Employee> employee;
 	private int exp;
 	
 	public enum Gender {
@@ -107,6 +109,7 @@ public class Employee implements Comparable<Employee>{
 		this.gender = gender;
 	}
 	
+	// Equals
 
 	@Override
 	public boolean equals(Object obj) {
@@ -124,7 +127,6 @@ public class Employee implements Comparable<Employee>{
 	
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
 		return toString().hashCode();
 
 	}
@@ -132,9 +134,8 @@ public class Employee implements Comparable<Employee>{
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return new StringBuilder()
-				.append(" id: "+id)
+				.append("id: "+id)
 				.append("")
 				.append(" name: "+name)
 				.append("")
@@ -162,6 +163,8 @@ public class Employee implements Comparable<Employee>{
 			public Employee build() {
 				return employee;
 			}
+			
+			
 			public EmployeeBuilder id(long id) {
 				employee.setId(id);
 				return this;
@@ -195,22 +198,22 @@ public class Employee implements Comparable<Employee>{
 		
 		}
 	
-		
+		// CompareTo
 		@Override
-		public int compareTo(Employee o) {
-			int compareLevel=Integer.compare(this.level, o.level);
+		public int compareTo(Employee emp) {
+			int compareLevel=Integer.compare(this.level, emp.level);
 			if (compareLevel!=0) {
 				return compareLevel;
 			}
-			int compareExp=Integer.compare(this.exp, o.exp);
+			int compareExp=Integer.compare(this.exp, emp.exp);
 			if (compareExp!=0) {
 				return compareLevel;
 			}
-			int genderCompare=o.gender.compareTo(this.gender);
+			int genderCompare=emp.gender.compareTo(this.gender);
 			if (genderCompare!=0) {
 				return genderCompare;
 			}
-			int compareSalary=Float.compare(this.salary, o.salary);
+			int compareSalary=Float.compare(this.salary, emp.salary);
 			return compareSalary;
 		}
 		
