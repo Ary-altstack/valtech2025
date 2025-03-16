@@ -1,0 +1,31 @@
+
+
+
+Expand the sorting functionality to allow sorting by multiple attributes (e.g., title, author, price).
+Allow users to filter books by different criteria like category, rating, and author.
+
+
+Adding User Interaction:
+
+Let users add ratings and reviews to books. You could structure this with:
+A Review class with attributes like user, rating, and comment.
+A method to calculate average ratings for books based on reviews.
+b. Ratings Integration with Sorting:
+
+Allow users to sort books based on their average rating or most recent reviews
+
+
+CRUD Operations
+Create: Implement functionality to add new books to the list.
+Read: Display the list of books. You might want to implement pagination if there are too many.
+Update: Allow updates to existing books (title, author, price, category, etc.).
+Delete: Enable deletion of books from the list
+
+
+Search Functionality
+Implement a search feature allowing users to find books by:
+Title, Author, ISBN, or Category.
+Wildcard search (e.g., searching by partial title or author).
+Advanced Search:
+
+Let users search using multiple criteria at once (e.g., books by a specific author within a price range)

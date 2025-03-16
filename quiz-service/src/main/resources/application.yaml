@@ -1,0 +1,22 @@
+server:
+  port: 9030
+spring:
+  application:
+    name: quiz-service
+
+  datasource:
+     driver-class: org.postgresql.Driver
+     url: jdbc:postgresql://localhost:5432/assignment
+     username: postgres
+     password: postgres
+
+  sql:
+    init:
+      mode: always
+ 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+ 

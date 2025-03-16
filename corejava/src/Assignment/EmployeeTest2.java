@@ -142,15 +142,15 @@ class EmployeeTest2 {
 		assertEquals(200, SumofSalaryByNameContaining);
 //		System.out.println(SumofSalaryByNameContaining);
 	}
+
+//	@Test
+//	@Override
+//	public void sortEmployeeById() {
+//		employees.sort(Comparator.comparing(Employee::getId));
+//		assertEquals(1, employees.get(0).getId());
+//		System.out.println(employees);
 //
-////	@Test
-////	@Override
-////	public void sortEmployeeById() {
-////		employees.sort(Comparator.comparing(Employee::getId));
-////		assertEquals(1, employees.get(0).getId());
-////		System.out.println(employees);
-////
-////	}
+//	}
 //	
 //	
 //
