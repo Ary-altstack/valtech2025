@@ -17,6 +17,6 @@ public interface QuestionService {
 
 	int countByTopic(String topic);
 
-	List<Question> findAllByTopic(String topic);
+	List<QuestionVO> findAllByTopic(String topic);
 
 }

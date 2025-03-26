@@ -51,8 +51,10 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 	
 	@Override
-	public List<Question> findAllByTopic(String topic){
-		return questionRepo.findAllByTopic(topic);
+	public List<QuestionVO> findAllByTopic(String topic){
+		return QuestionVO.from(questionRepo.findAllByTopic(topic));
+
+//		return questionRepo.findAllByTopic(topic);
 		
 	}
 	

@@ -22,9 +22,9 @@ public class Car {
 		this.version = version;
 	}
 	
-	public static CarBuilder builder() {
-		return new CarBuilder(new(Car));
-	}
+//	public static CarBuilder builder() {
+//		return new CarBuilder(new(Car));
+//	}
 	
 	@Override
 	public boolean equals(Object obj) {

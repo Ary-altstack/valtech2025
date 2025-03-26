@@ -78,7 +78,7 @@ public class BookImpl implements BookService{
 //		 Group Books by Genre 
 
 		
-//		Map<String, List<Book>> groupedByGenre = books.stream().collect(Collectors.groupingBy(Book::getGenre));
+//		Map<Object, List<Book>> groupedByGenre = books.stream().collect(Collectors.groupingBy(Book::getGenre));
 //		System.out.println(groupedByGenre);
 		
 		BookImpl byGenre = new BookImpl();
@@ -91,7 +91,6 @@ public class BookImpl implements BookService{
 		
 		
 //		Count Books By genre 
-		
 //		long countBooksByGenre = books.stream().filter(b->b.getGenre()="Thriller").count();
 		
 	

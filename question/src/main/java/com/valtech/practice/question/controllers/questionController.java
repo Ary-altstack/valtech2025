@@ -41,9 +41,13 @@ public class questionController {
 	}
 	
 	@GetMapping("/topic/{topic}")
-	public List<Question> getAllByTopic(@PathVariable("topic") String topic ) {
+	public List<QuestionVO> getAllByTopic(@PathVariable("topic") String topic ) {
 		return questionService.findAllByTopic(topic);
 	}
+	
+	
+	
+	
 	
 	
 

@@ -36,7 +36,7 @@ class QuestionApplicationTests {
 	void questionService() {
 		
 //		assertEquals(5, questionService.countByTopic("GK"));
-//		assertEquals(1, questionService.countByTopic("Design"));	
+		assertEquals(2, questionService.countByTopic("Design"));	
 	}
 //	@Test
 //	public void test() {

@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 class CarTest {
 
-	private void testClone() throws Exception {
-		Car car = new Car("Honda","City","VX",2024,7);
-		Car car1 = (Car)car.clone();
-		assertEquals(car,car1);
-		assertNotSame(car,car1);
-		
-
-	}
+//	private void testClone() throws Exception {
+//		Car car = new Car("Honda","City","VX",2024,7);
+//		Car car1 = (Car)car.clone();
+//		assertEquals(car,car1);
+//		assertNotSame(car,car1);
+//		
+//
+//	}
 	
 	@Test
 	void testhehashcode() {

@@ -39,9 +39,9 @@ public class CustomerTest {
 //	  	is.save(i);
 //		ctx.close(); 
 		
-//		Customer c = new Customer("Ramesh",22,"Kashmir","Goa");
-//		c.setAppStatus(AppStatus.DISABLE);s
-//		cs.save(c);
+		Customer c = new Customer("Harish",22,"Goa","Goa");
+		c.setAppStatus(AppStatus.DISABLE);
+		cs.save(c);
 	
 //		Order o = new Order();
 //		
@@ -53,7 +53,7 @@ public class CustomerTest {
 //		o.setStatus(Status.PROCESSING);
 //		
 //		s.saveOrder(o);
-//////		
+////////		
 ////		
 ////		Order order = os.get(1);
 //		ctx.close();

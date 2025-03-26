@@ -1,4 +1,4 @@
-package com.valtech.training.leave.services;
+ package com.valtech.training.leave.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +14,7 @@ import com.valtech.training.leave.entities.LeaveMaster;
 import com.valtech.training.leave.repos.LeaveMasterRepo;
 import com.valtech.training.leave.repos.LeaveRepo;
 import com.valtech.training.leave.vos.ApproveLeaveVO;
+import com.valtech.training.leave.vos.EmployeeVO;
 import com.valtech.training.leave.vos.LeaveMasterVO;
 import com.valtech.training.leave.vos.LeaveVO;
 
@@ -46,7 +47,7 @@ public class LeaveServiceImpl implements LeaveService {
 	public LeaveVO approveLeave (ApproveLeaveVO vo) {
 		Leave leave = leaveRepo.getReferenceById(vo.leaveId());
 		// we have to call the EmployeeMicroService to understand the manager.
-		long manager = employeeClient.getManager(leave.getEmployeeId()); //get from the employee service.
+		long manager = employeeClient.getEmployeeAsManager(leave.getEmployeeId()).managerId(); //get from the employee service.
 		if(manager == vo.manager()) {
 			LeaveMaster lm = leaveMasterRepo.findByEmployeeId(leave.getEmployeeId());
 			lm.takeleaves(leave);
@@ -130,6 +131,12 @@ public class LeaveServiceImpl implements LeaveService {
 		vo.updateTo(leave);
 		leaveRepo.save(leave);
 		return LeaveVO.from(leave);
+	}
+
+
+	@Override
+	public EmployeeVO getManager(Long employeeId) {
+		return employeeClient.getEmployeeAsManager(employeeId);
 	}
 	
 
