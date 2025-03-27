@@ -8,10 +8,10 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.valtech.practice</groupId>
-	<artifactId>result-service</artifactId>
+	<groupId>com.valtech.training</groupId>
+	<artifactId>quiz-result-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>result-service</name>
+	<name>quiz-result-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<spring-cloud.version>2024.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>

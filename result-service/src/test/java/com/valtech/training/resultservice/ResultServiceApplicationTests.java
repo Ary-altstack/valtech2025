@@ -1,4 +1,4 @@
-package com.valtech.practice.result_service;
+package com.valtech.training.resultservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

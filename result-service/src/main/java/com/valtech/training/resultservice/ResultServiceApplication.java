@@ -1,4 +1,4 @@
-package com.valtech.practice.result_service;
+package com.valtech.training.resultservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
