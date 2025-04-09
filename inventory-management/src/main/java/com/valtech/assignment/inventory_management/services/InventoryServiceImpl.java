@@ -34,7 +34,7 @@ public class InventoryServiceImpl implements InventoryService {
 	public void updateInventory(Order o) {
 		Item item;
 		for (LineOrder lineOrder : o.getLineOrders()) {
-			item = itemRepo.getReferenceById(lineOrder.getItemId().getId());
+			item = itemRepo.getReferenceById(lineOrder.getItem().getId());
 			item.setQuantity(item.getQuantity()-lineOrder.getQuantity());
 			item.setReorderQuantity(item.getReorderQuantity() + lineOrder.getQuantity());
 			itemRepo.save(item);

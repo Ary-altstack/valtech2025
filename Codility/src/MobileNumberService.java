@@ -7,14 +7,11 @@ public class MobileNumberService {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
         
-        // Get number input from the user
         System.out.print("Enter a number: ");
         String number = scanner.nextLine();
         
-        // Call the rateNumber method to calculate the memorability score
         int score = rateNumber(number);
         
-        // Output the memorability rating
         System.out.println("Memorability rating for " + number + ": " + score);
 	}
 	
@@ -22,17 +19,17 @@ public class MobileNumberService {
         int score = 0;
         
         if (number.length() <= 3) {
-            score += 3; // Easier to remember
+            score += 3; 
         } else if (number.length() <= 5) {
-            score += 2; // Moderate
+            score += 2; 
         } else {
-            score += 1; // Harder to remember
+            score += 1; 
         }
         if (isPalindrome(number)) {
-            score += 3; // Palindromes are easier to remember
+            score += 3; 
         }
         if (hasRepeatingDigits(number)) {
-            score += 2; // Repeating digits are easier to remember
+            score += 2; 
         }
         return score;
     }

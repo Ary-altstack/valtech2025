@@ -14,8 +14,8 @@ import jakarta.persistence.SequenceGenerator;
 @Entity
 public class Item {
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "entity_seq_generator")
-	@SequenceGenerator(name="entity_seq_generator", sequenceName="hibernate_sequence",allocationSize = 1)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "itemseq")
+	@SequenceGenerator(name="itemseq", sequenceName="item_sequence",allocationSize = 1)
 	private int id;
 	private String name;
 	private String description;

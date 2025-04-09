@@ -19,40 +19,49 @@ public class LineOrder {
 	
 	@ManyToOne(targetEntity = Item.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="itemId",referencedColumnName="id")
-	private Item itemId;
+	private Item item;
 	private int quantity;
 	
 	
 	@ManyToOne(targetEntity = Order.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="orderId",referencedColumnName="id")
-	private Order orderId;
+	private Order order;
 	
 	
 	public LineOrder() {}
 
 
-	public LineOrder( int quantity) {
+//	public LineOrder( int quanti) {
 //		this.itemId = itemId;
-		this.quantity = quantity;
+//		this.quantity = quantity;
 //		this.orderId = orderId;
-	}
+//	}
+	
+	
 
 	
 	public int getId() {
 		return id;
 	}
 	
+	public LineOrder(Item item, int quantity, Order orderId) {
+	this.item = item;
+	this.quantity = quantity;
+	this.order = order;
+}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Item getItemId() {
-		return itemId;
+	public Item getItem() {
+		return item;
 	}
 
 
-	public void setItemId(Item itemId) {
-		this.itemId = itemId;
+	public void setItemId(Item item) {
+		this.item = item;
 	}
 
 
@@ -66,12 +75,12 @@ public class LineOrder {
 	}
 
 
-	public Order getOrderId() {
-		return orderId;
+	public Order getOrder() {
+		return order;
 	}
 	
-	public void setOrderId(Order orderId) {
-		this.orderId = orderId;
+	public void setOrderId(Order order) {
+		this.order = order;
 	}
 	
 	

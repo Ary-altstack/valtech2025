@@ -39,7 +39,7 @@ public class Customer {
 	}
 	
 	@OneToMany(targetEntity = Order.class, mappedBy = "customer",cascade=CascadeType.ALL,fetch = FetchType.LAZY)	
-	private Set<Order> orders  ;
+	private List<Order> orders  ;
 	
 	
 	public Customer () {}
@@ -112,11 +112,11 @@ public class Customer {
 	}
 
 	
-	public Set<Order> getOrders() {
+	public List<Order> getOrders() {
 		return orders;
 	}
 	
-	public void setOrders(Set<Order> orders) {
+	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
 	

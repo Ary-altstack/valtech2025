@@ -28,8 +28,8 @@ public class Order {
 	}
 	
 	
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="OrderSequence")
-	@SequenceGenerator(name="OrderSequence",sequenceName="Order_Seq",allocationSize = 1)
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="orderseq")
+	@SequenceGenerator(name="orderseq",sequenceName="order_seq",allocationSize = 1)
 	private int id;
 	
 	@ManyToOne (targetEntity = Customer.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
@@ -62,6 +62,7 @@ public class Order {
 	
 	
 	
+	
 
 //	public Order(Customer customer, List<LineOrder> lineOrders, Status status) {
 ////		this.id = id;
@@ -73,6 +74,12 @@ public class Order {
 //	public Order(Customer customer) {
 //		this.customer = customer;
 //	}
+	
+	public Order(Customer customer, List<LineOrder> lineOrders, Status status) {
+		this.customer = customer;
+		this.lineOrders = lineOrders;
+		this.status = status;
+	}
 	
 	public int getId() {
 		return id;
